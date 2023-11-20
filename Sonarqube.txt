@@ -1,0 +1,20 @@
+
+
+dotnet sonarscanner  -- in project file cmd
+
+dotnet sonarscanner begin /k:"OAuthAPI" /d:sonar.login="admin" /d:sonar.password="root"
+
+dotnet build
+
+dotnet sonarscanner end /d:sonar.login="admin" /d:sonar.password="root"
+
+-- Runner
+
+
+"D:\Downloads\sonar-scanner-msbuild-5.13.1.76110-net46\SonarScanner.MSBuild.exe" begin /k:"OAuthAPI-2" /d:sonar.host.url="http://localhost:9000" /d:sonar.token="sqp_1e1b54c2cb3bfe784b02fbfcc0678a7863f67c0e"
+
+"C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe" C:\Users\IS001\source\repos\elixirhr\OAuthAPI.sln /t:Rebuild
+
+
+"D:\Downloads\sonar-scanner-msbuild-5.13.1.76110-net46\SonarScanner.MSBuild.exe" end /d:sonar.login="sqp_1e1b54c2cb3bfe784b02fbfcc0678a7863f67c0e"
+
